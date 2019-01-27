@@ -1,4 +1,4 @@
-# SFML builder
+# SFMLBuilder
 
 [![Build Status](https://travis-ci.org/Gnimuc/SFMLBuilder.svg?branch=master)](https://travis-ci.org/Gnimuc/SFMLBuilder)
 
