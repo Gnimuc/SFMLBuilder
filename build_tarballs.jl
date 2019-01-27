@@ -74,7 +74,6 @@ products(prefix) = [
     LibraryProduct(prefix, "libsfml-network", :libsfml_network),
     LibraryProduct(prefix, "libsfml-system", :libsfml_system),
     LibraryProduct(prefix, "libsfml-graphics", :libsfml_graphics),
-    LibraryProduct(prefix, "libopenal32", :libopenal32),
     LibraryProduct(prefix, "libcsfml-system", :libcsfml_system),
     LibraryProduct(prefix, "libcsfml-network", :libcsfml_network),
     LibraryProduct(prefix, "libcsfml-window", :libcsfml_window),
