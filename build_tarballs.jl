@@ -68,16 +68,16 @@ platforms = [
 
 # The products that we will ensure are always built
 products(prefix) = [
-    LibraryProduct(prefix, "libcsfml-graphics", :libcsfml_graphics),
-    LibraryProduct(prefix, "libsfml-window", :libsfml_window),
-    LibraryProduct(prefix, "libsfml-audio", :libsfml_audio),
-    LibraryProduct(prefix, "libsfml-network", :libsfml_network),
-    LibraryProduct(prefix, "libsfml-system", :libsfml_system),
-    LibraryProduct(prefix, "libsfml-graphics", :libsfml_graphics),
-    LibraryProduct(prefix, "libcsfml-system", :libcsfml_system),
-    LibraryProduct(prefix, "libcsfml-network", :libcsfml_network),
-    LibraryProduct(prefix, "libcsfml-window", :libcsfml_window),
-    LibraryProduct(prefix, "libcsfml-audio", :libcsfml_audio)
+    LibraryProduct(prefix, ["libcsfml-graphics", "csfml-graphics-2"], :libcsfml_graphics),
+    LibraryProduct(prefix, ["libsfml-window", "sfml-window-2"], :libsfml_window),
+    LibraryProduct(prefix, ["libsfml-audio", "sfml-audio-2"], :libsfml_audio),
+    LibraryProduct(prefix, ["libsfml-network", "sfml-network-2"], :libsfml_network),
+    LibraryProduct(prefix, ["libsfml-system", "sfml-system-2"], :libsfml_system),
+    LibraryProduct(prefix, ["libsfml-graphics", "sfml-graphics-2"], :libsfml_graphics),
+    LibraryProduct(prefix, ["libcsfml-system", "csfml-system-2"], :libcsfml_system),
+    LibraryProduct(prefix, ["libcsfml-network", "csfml-network-2"], :libcsfml_network),
+    LibraryProduct(prefix, ["libcsfml-window", "csfml-window-2"], :libcsfml_window),
+    LibraryProduct(prefix, ["libcsfml-audio", "csfml-audio-2"], :libcsfml_audio)
 ]
 
 # Dependencies that must be installed before this package can be built
