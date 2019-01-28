@@ -62,8 +62,8 @@ make install
 # platforms are passed in on the command line
 platforms = [
     MacOS(:x86_64),
-    Windows(:x86_64),
-    Windows(:i686),
+    Windows(:x86_64; compiler_abi=CompilerABI(:gcc7)),
+    Windows(:i686; compiler_abi=CompilerABI(:gcc7)),
 ]
 
 # The products that we will ensure are always built
