@@ -25,7 +25,7 @@ mkdir build && cd build
 CMAKE_FLAGS="-DCMAKE_INSTALL_PREFIX=${prefix} -DCMAKE_TOOLCHAIN_FILE=/opt/${target}/${target}.toolchain"
 
 if [[ "${target}" == *apple* ]]; then
-CMAKE_FLAGS="${CMAKE_FLAGS} -DSFML_DEPENDENCIES_INSTALL_PREFIX=${WORKSPACE}/destdir"
+CMAKE_FLAGS="${CMAKE_FLAGS} -DSFML_DEPENDENCIES_INSTALL_PREFIX=${WORKSPACE}/destdir/Frameworks"
 fi
 
 if [[ "${target}" == *mingw* ]] && [[ ${nbits} == 64 ]]; then
