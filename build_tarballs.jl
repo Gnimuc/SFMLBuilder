@@ -7,8 +7,11 @@ version = v"2.5.1"
 
 # Collection of sources required to build SFML
 sources = [
+    "https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz" =>
+    "34ad106e4592d2ec03245db5e8ad8fbf85c256d6ef9e337e8cf5c4345dc583dd",
+
     "https://github.com/SFML/SFML.git" =>
-    "2f11710abc5aa478503a7ff3f9e654bd2078ebab",
+    "192eb968a4e938f36948e97f97ddc354a8a470fe",
 
     "https://github.com/SFML/CSFML.git" =>
     "61f17e3c1d109b65ef7e3e3ea1d06961da130afc",
@@ -19,6 +22,15 @@ sources = [
 script = raw"""
 # build SFML
 cd ${WORKSPACE}/srcdir
+
+if [[ "${target}" == *linux* ]]; then
+
+cd SFML-2.5.1/
+mv ./include $WORKSPACE/destdir/
+mv ./lib $WORKSPACE/destdir/
+
+else
+
 cd SFML
 mkdir build && cd build
 
@@ -39,6 +51,8 @@ fi
 cmake .. ${CMAKE_FLAGS}
 make
 make install
+
+fi
 
 # build CSFML
 cd ${WORKSPACE}/srcdir
@@ -61,10 +75,12 @@ make install
 # These are the platforms we will build for by default, unless further
 # platforms are passed in on the command line
 platforms = [
+    Linux(:x86_64; libc=:glibc, compiler_abi=CompilerABI(:gcc7)),
     MacOS(:x86_64),
     Windows(:x86_64; compiler_abi=CompilerABI(:gcc7)),
     Windows(:i686; compiler_abi=CompilerABI(:gcc7)),
 ]
+
 
 # The products that we will ensure are always built
 products(prefix) = [
